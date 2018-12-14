@@ -5,7 +5,7 @@ class List extends Component {
   render() {
     return (
       <div>
-				list
+				我是yangyang
       </div>
     );
   }
