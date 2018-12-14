@@ -1,0 +1,32 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+#footer{
+	height:49px;
+	width:100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background: #ccc;
+	color: #fff;
+}
+#footer>ul{
+	height:49px;
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+}
+#footer>ul>li{
+	line-height:49px;
+	width:100%;
+}
+#footer>ul>li>.active{
+	color: #f00;
+}
