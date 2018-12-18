@@ -9,7 +9,7 @@ class Home extends Component {
     return (
       <div>
 				<Header/>
-				
+				1111郭斌
 				
 				<Footer/>
       </div>
