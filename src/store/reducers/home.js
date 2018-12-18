@@ -4,7 +4,7 @@ const defaultState={
 export default (state=defaultState,action)=>{
 	let newState=JSON.parse(JSON.stringify(state))
 	switch(action.type){
-		case "ONE_DATA":newState.oneData=action.value;return newState
+		case "ONE_DATA_FULFILLED":newState.oneData=action.payload;return newState
 	}
 	return state
 }

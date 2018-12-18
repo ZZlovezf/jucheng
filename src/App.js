@@ -7,6 +7,9 @@ import My from "./components/My/my"
 import store from "./store"
 import {Provider} from "react-redux"
 import {fetch} from "whatwg-fetch"
+import "./common/css/reset.css"
+import "./common/js/flexble"
+import "./common/css/home.css"
 class App extends Component {
   render() {
     return (
@@ -28,16 +31,7 @@ class App extends Component {
 			</Provider>
     );
   }
-	componentDidMount(){
-		fetch("/index/hotsShowList").then(res => {
-				return res.json()
-			}).then(json => {
-				store.dispatch({
-					type:"ONE_DATA",
-					value:json
-				})
-			})
-	}
+	
 	
 	
 }
