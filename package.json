@@ -28,6 +28,7 @@
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-promise-middleware": "^5.1.1",
+    "swiper": "^4.4.5",
     "whatwg-fetch": "^3.0.0"
   }
 }

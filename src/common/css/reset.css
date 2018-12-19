@@ -4,13 +4,13 @@ html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, l
 
 fieldset, c{ border:none; }
 
-img{display: block;}
+img{vertical-align: middle;}
 
 address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; }
 
 ul, ol ,li{ list-style:none; }
-
-body { color:#333; font:12px "SimSun","宋体","Arial Narrow",HELVETICA; background:#fff;}
+i{font-style: normal;}
+body { color:#333; font:12px Arial, "微软雅黑", sans-serif; background:#fff;}
 
 a { color:#666; text-decoration:none; }
 /*清除浮动*/
@@ -20,6 +20,7 @@ body,html{
     height: 100%;
     overflow: hidden;
 }
+.clearfix:after{content:"";clear: both;height:0;overflow: hidden;visibility: hidden;display: block;}
 
 
 

@@ -9,24 +9,56 @@ a{
 	text-decoration: none;
 }
 #footer{
-	height:49px;
+	height:1rem;
 	width:100%;
 	position: fixed;
 	left: 0;
 	bottom: 0;
-	background: #ccc;
-	color: #fff;
+	background: #fff;
+	color: #333;
 }
 #footer>ul{
-	height:49px;
+	height:1rem;
 	display: flex;
 	justify-content: space-around;
 	text-align: center;
 }
 #footer>ul>li{
-	line-height:49px;
 	width:100%;
+	display: flex;
+	justify-content: space-around;
+	flex-direction:column;
+	align-items: center;
+}
+#footer>ul>li .icon-box{
+	width:100%;
+	height:.30rem;
+	
 }
 #footer>ul>li>.active{
-	color: #f00;
+	color:#ff7919
+}
+#footer>ul>li .active .icon-box{
+	background-position-y:-0.3rem;
+}
+#footer>ul>li:nth-child(1) p{
+	background:url(http://image.juooo.com/group1/M00/01/81/rAoKmVuQecmATGXZAAAUKcf_gA0402.png) no-repeat center;
+	background-size:.30rem .6rem;
+	background-position-y:0px;
+
+}
+#footer>ul>li:nth-child(2) p{
+	background: url(http://image.juooo.com/group1/M00/02/2A/rAoKNVuQedOARw84AAAJ8MlQ_ac653.png) no-repeat center;
+	background-size:.30rem .6rem;
+	background-position-y:0px;
+}
+#footer>ul>li:nth-child(3) p{
+	background: url(http://image.juooo.com/group1/M00/02/71/rAoKNVwRraqAMv3SAAAIdQJTBKA919.png) no-repeat center;
+	background-size:.30rem .6rem;
+	background-position-y:0px;
+}
+#footer>ul>li:nth-child(4) p{
+	background: url(http://image.juooo.com/group1/M00/01/81/rAoKmVuQedqADpfXAAAQDvkHt5o350.png) no-repeat center;
+	background-size:.30rem .60rem;
+	background-position-y:0px;
 }

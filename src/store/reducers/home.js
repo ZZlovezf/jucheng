@@ -1,5 +1,8 @@
 const defaultState={
-	
+	oneData:{
+		code:1,
+		data:[]
+	}
 }
 export default (state=defaultState,action)=>{
 	let newState=JSON.parse(JSON.stringify(state))
