@@ -2935,8 +2935,13 @@ dom-serializer@0:
 
 dom7@^2.1.2:
   version "2.1.2"
+<<<<<<< HEAD
   resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.1.2.tgz#a914070c0abe8465384997a9c4f34475f67f75bd"
   integrity sha512-cGwWtpu7KY3JnbREGqG4EGC/u+1hyLfWVMqrqRjmwiO8d5i4B+0imLZAQ/cJbiXnjbs0pdIUzcUyeI9BbnyKNg==
+=======
+  resolved "http://registry.npm.taobao.org/dom7/download/dom7-2.1.2.tgz#a914070c0abe8465384997a9c4f34475f67f75bd"
+  integrity sha1-qRQHDAq+hGU4SZepxPNEdfZ/db0=
+>>>>>>> gg
   dependencies:
     ssr-window "^1.0.1"
 
@@ -8727,8 +8732,13 @@ sshpk@^1.7.0:
 
 ssr-window@^1.0.1:
   version "1.0.1"
+<<<<<<< HEAD
   resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-1.0.1.tgz#30752a6a4666e7767f0b7e6aa6fc2fdbd0d9b369"
   integrity sha512-dgFqB+f00LJTEgb6UXhx0h+SrG50LJvti2yMKMqAgzfUmUXZrLSv2fjULF7AWGwK25EXu8+smLR3jYsJQChPsg==
+=======
+  resolved "http://registry.npm.taobao.org/ssr-window/download/ssr-window-1.0.1.tgz#30752a6a4666e7767f0b7e6aa6fc2fdbd0d9b369"
+  integrity sha1-MHUqakZm53Z/C35qpvwv29DZs2k=
+>>>>>>> gg
 
 ssri@^5.2.4:
   version "5.3.0"
@@ -8957,8 +8967,13 @@ svgo@^1.0.0, svgo@^1.0.5:
 
 swiper@^4.4.5:
   version "4.4.5"
+<<<<<<< HEAD
   resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.4.5.tgz#a6146fa0136a3da139560d970ca0151596d3f274"
   integrity sha512-NgWvKR5OSvlKVd/G+zpUek/ZfcvweTVALkWmr53rUo46E0i2Pkmiv8NlrlFbV+oky5+5W/Tnvpsp1ZwnzY1Y9A==
+=======
+  resolved "http://registry.npm.taobao.org/swiper/download/swiper-4.4.5.tgz#a6146fa0136a3da139560d970ca0151596d3f274"
+  integrity sha1-phRvoBNqPaE5Vg2XDKAVFZbT8nQ=
+>>>>>>> gg
   dependencies:
     dom7 "^2.1.2"
     ssr-window "^1.0.1"
@@ -9631,10 +9646,15 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3, whatwg-encoding@^1.0.5:
   dependencies:
     iconv-lite "0.4.24"
 
-whatwg-fetch@3.0.0, whatwg-fetch@^3.0.0:
+whatwg-fetch@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.0.0.tgz#fc804e458cc460009b1a2b966bc8817d2578aefb"
   integrity sha512-9GSJUgz1D4MfyKU7KRqwOjXCXTqWdFNvEr7eUBYchQiVc744mqK/MzXPNR2WsPkmkOa4ywfg8C2n8h+13Bey1Q==
+
+whatwg-fetch@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/whatwg-fetch/download/whatwg-fetch-3.0.0.tgz#fc804e458cc460009b1a2b966bc8817d2578aefb"
+  integrity sha1-/IBORYzEYACbGiuWa8iBfSV4rvs=
 
 whatwg-mimetype@^2.1.0, whatwg-mimetype@^2.2.0:
   version "2.2.0"

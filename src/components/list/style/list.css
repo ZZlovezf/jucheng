@@ -1,0 +1,30 @@
+/* 全部 */
+#list{
+    font-family: Arial, "微软雅黑", sans-serif;
+    width: 100%;
+    height: 1000px;
+    margin-top: .879rem;
+}
+
+/* 导航 */
+#list >#list_nav{
+    width: 100%;
+    height: .75rem;
+    overflow: auto;
+    background: #ccc;
+}
+#list >#list_nav>ul{
+    width: 200%;
+}
+#list >#list_nav>ul>li{
+    height: 100%;
+    float: left
+}
+#list >#list_nav>ul>li>a{
+    display: inline-block;
+    padding: 0 .28rem;
+    color: #666666;
+    font-size: .25rem;
+    line-height: .69rem
+
+}

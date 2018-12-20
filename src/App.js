@@ -19,7 +19,6 @@ class App extends Component {
         
       	<div className="con">
 				<Switch>
-
       		<Route path="/ele" component={Ele}/>
 					<Route path="/index" component={Home}/>
 					<Route path="/list" component={List}/>
