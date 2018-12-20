@@ -6,11 +6,11 @@ import My from "./components/My/my"
 import Ele from "./components/ele/ele"
 import store from "./store"
 import {Provider} from "react-redux"
-import {fetch} from "whatwg-fetch"
+
 import "./common/css/reset.css"
 import "./common/js/flexble"
 import "./common/css/home.css"
-const qs=require("querystring")
+
 class App extends Component {
   render() {
     return (
@@ -31,24 +31,7 @@ class App extends Component {
 			</Provider>
     );
   }
-	componentDidMount(){
-		let obj={
-						city_id: -1,
-			category: 0,
-			keywords:"" ,
-			activity_id: 0,
-			sort_type: 0,
-			page: 1
-		}
-			fetch("/Show/getShowList",{
-				method:"post",
-							headers:{
-				'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-			},
-				body:qs.stringify(obj)
-			}).then(res=>res.json()).then(data=>{console.log(data)})
-	}
-	
+
 	
 	
 }
