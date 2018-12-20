@@ -18,7 +18,6 @@ class App extends Component {
         
       	<div>
 				<Switch>
-
       		<Route path="/ele" component={Ele}/>
 					<Route path="/index" component={Home}/>
 					<Route path="/list" component={List}/>
