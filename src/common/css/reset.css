@@ -20,9 +20,10 @@ body,html{
     height: 100%;
     overflow: hidden;
 }
+input{ outline: none;}
 .clearfix:after{content:"";clear: both;height:0;overflow: hidden;visibility: hidden;display: block;}
 
-
+button{outline: none;}
 
 
 

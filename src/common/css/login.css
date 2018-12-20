@@ -1,0 +1,70 @@
+
+.login header{
+	height:1.2rem;
+	width:100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	line-height:1.2rem;
+}
+.login header i{
+	font-family:"宋体";
+	width: .92rem;
+
+}
+.login header span{
+	font-family:"宋体";
+	width: 1.08rem;
+
+}
+.login section{
+	position:fixed;
+	bottom:0;
+	top:1.2rem;
+	left: 0;
+	right: 0;
+	padding: .70rem .83rem 0;
+}
+
+.login section p{
+	font-size: 0.36rem;
+	height: .54rem;
+}
+.login section ul{
+	margin-top: .9rem;
+}
+.login section ul li{
+	height: .80rem;
+	margin-bottom:.40rem;
+}
+.login section ul li:nth-child(3){
+	display: flex;
+	justify-content: space-between;
+	height:.52rem;
+}
+.login section ul li:nth-child(3) i{
+	line-height:.52rem;
+	width:1.88rem;
+}
+.login section ul li:nth-child(3) span{
+	line-height:.52rem;
+	width:1.32rem;
+}
+.login section ul li input{
+	height:.48rem;
+	width:5.17rem;
+	font-size: 0.32rem;
+	border:0 ;
+}
+.login section button{
+	width:100%;
+	margin-top:.2rem;
+	height:.9rem;
+	border: 0;
+	border-radius:.45rem;
+	background: rgba(255, 215, 140, 0.8);
+    background-image: linear-gradient(135deg, #ffd88c 2.6666666667rem, #ffbc8c 6.6666666667rem);
+
+}

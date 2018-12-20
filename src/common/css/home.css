@@ -13,11 +13,14 @@
 }
 .con{
 	position: fixed;
-	top:.87rem;
+	top:0rem;
 	left:0;
 	right: 0;
 	bottom:1rem;
 	overflow-y: auto;
+}
+.Swiper{
+	margin-top:.8rem;
 }
 .category-wrap{
 	height:1.97rem;
@@ -206,6 +209,8 @@
 	display: flex;
 	line-height:0.87rem;
 	border-bottom: 1px solid #e7e7e7;
+	background: #FFFFFF;
+	z-index: 1000;
  }
  .navbar .left{
 	 width:1.5rem;

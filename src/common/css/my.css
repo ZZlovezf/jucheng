@@ -1,0 +1,73 @@
+.myCon{
+	position: fixed;
+	top: 0;
+	height:3rem;
+	left: 0;
+	width: 100%;
+}
+.main-top {
+    position: relative;
+	
+    background-size: 100%;
+}
+.plus-top {
+    height: 4.10667rem;
+    overflow: hidden;
+}
+.main-top .head-logo {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.32rem;
+    border: 2px solid #e6e6e6;
+    border-radius: 100%;
+    width: 1.13333rem;
+    height: 1.13333rem;
+    background: #f5f5f5;
+}
+.main-top .name {
+    top: 0.6rem;
+    font-size: 0.34rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main-top .grade, .main-top .name {
+    position: absolute;
+    left: 1.7rem;
+    width: 5rem;
+    color: #fff;
+}
+.main-top .name .lv-icon {
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.25rem;
+    vertical-align: middle;
+    background-position: center;
+    background-size: .7rem 0.15rem;
+    background-repeat: no-repeat;
+}
+.main-top .grade {
+    top: 1.2rem;
+    font-size: 0.2512rem;
+}
+.main-top .card-plusModel {
+    width: 7.72rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3.36rem;
+	    border-radius: 0.2rem 0.2rem 0 0;
+	}
+	.main-top .card-plusModel .plusModel-rowTxt .rowTxt {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.32rem 0.32rem 0 0.32rem;
+    color: #d8c9a3;
+}
+.main-top .card-plusModel .plusModel-rowTxt .rowTxt2 {
+    font-size: 0.2512rem;
+    color: #d8c9a3;
+    padding-left: 0.32rem;
+    padding-top: 0.06rem;
+}

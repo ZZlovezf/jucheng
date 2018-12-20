@@ -1,0 +1,44 @@
+.search-header{
+	border-bottom: 1px solid #dfdfdf;
+	height: .89rem;
+	width:100%;
+	position: fixed;
+	top:0;
+	left: 0;
+	padding: 0 .3rem;
+	display:flex;
+	line-height:.89rem;
+	z-index: 1000;
+	
+}
+.search-header i{
+	width:.55rem;
+	font-family:"宋体";
+}
+.search-header span{
+	width:.84rem;
+	text-align:right;
+	color: #666666
+}
+.search-header p{
+	flex: 1;
+	height:.56rem;
+	background: #f5f5f5;
+	border-radius:0.25rem;
+	align-self: center;
+	padding-left:.66rem;
+	padding-top:.15rem;
+}
+.search-header p input{
+	border:0;
+	background: transparent;
+	color: #333;
+	vertical-align: top;
+	height:.28rem;
+	font-size:.20rem;
+}
+.search-header .fa-search{
+	color:#ccc;
+	vertical-align: top;
+	margin-right:.1rem;
+}
