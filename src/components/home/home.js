@@ -13,14 +13,9 @@ class Home extends Component {
     return (
       <div>
 				<Header/>
-<<<<<<< HEAD
 				<MySwiper swiperList={swiperList}/>
 				<CateGroy/>
 				<Hots data={data} />
-=======
-				1111郭斌
-				
->>>>>>> gg
 				<Footer/>
       </div>
     );

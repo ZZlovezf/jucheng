@@ -1,25 +1,20 @@
 
 import React, { Component } from 'react';
-
+import {HashRouter as Router,Route,Link,NavLink,Switch,Redirect} from "react-router-dom";
 import { connect } from "react-redux";
 
-
 import Footer from "../../common/js/footer";
+import List_header from "./child/list_header";
 import List_nav from "./child/list_nav1";
 import List_show from "./child/list_show";
-
-import { GG_showdata } from "../../action/actionCreator"
+import List_detail from "./child/list_detail";
+import { GG_showdata } from "../../action/actionCreator";
 import "./style/list.css";
 const qs = require("querystring");
 
 
 
 class List extends Component {
-  // componenetWillUpdate(){
-  //   let url = this.changeprops()
-  //   let {cid,caid} = url;
-  //   this.props.getDate(cid,caid)
-  // }
   componentDidMount() {
     let { cid, caid } = this.state.url
     this.props.getDate(cid, caid)
@@ -32,9 +27,12 @@ class List extends Component {
     }
   }
   render() {
-    let { data } = this.props.listdata
+   
+    let { data } = JSON.parse(this.props.listdata);
     return (
       <div id="list">
+      <Route path="/listdetail" component={List_detail}/>
+        <List_header/>
         <List_nav Changeprops={this.handleGet.bind(this)} />
         <List_show data={data} />
         <Footer />
@@ -45,27 +43,23 @@ class List extends Component {
     let query = qs.parse(this.props.location.search.slice(1))
     return query
   }
-  handleGet() {
-    
-    let url = this.changeprops()
-    
+  handleGet() {  
+    let url = this.changeprops()   
     let { cid, caid } = url;
     this.props.getDate(cid, caid)
-
   }
 
 }
 const mapStateToProps = (state) => ({
-  listdata: state.list.showdata
+  listdata: JSON.stringify(state.list.showdata)
 })
 const mapDispatchToProps = (dispatch) => ({
 
   getDate(cid, caid = 0, page = 1) {
-    console.log(cid,caid,page)
     let obj = {
       city_id: cid,
       category: caid,
-      keywords: "null",
+      keywords: null,
       activity_id: 0,
       sort_type: 0,
       page: page

@@ -26,9 +26,8 @@ class Home_nav extends Component {
             </div>
         )
     }
-    hanlechange(){
-       this.props.Changeprops()
+    hanlechange() {
+        this.props.Changeprops()
     }
 }
-
 export default Home_nav
