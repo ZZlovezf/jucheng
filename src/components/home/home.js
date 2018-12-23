@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Footer from "../../common/js/footer"
 import {connect} from "react-redux"
-import {get_one_action} from "../../action/actionCreator"
+import {get_one_action,drawing_action} from "../../action/actionCreator"
 import Header from "../../common/js/header"
 import MySwiper from "../../common/js/swiper"
 import CateGroy from "./children/categroy"
@@ -23,6 +23,11 @@ class Home extends Component {
   }
 	componentDidMount(){
 		this.props.getData()
+		if(JSON.parse(sessionStorage.getItem("user"))){
+			this.props.drawing(true)
+		}else{
+			this.props.drawing(false)
+		}
 	}
 }
 const mapStateToProps=state=>({
@@ -31,6 +36,9 @@ const mapStateToProps=state=>({
 const mapDispatchToProps=(dispatch,props)=>({
 		getData(){
 			get_one_action(dispatch)
+		},
+		drawing(flag){
+			dispatch(drawing_action(flag))
 		}
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Home);

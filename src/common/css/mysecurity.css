@@ -1,0 +1,73 @@
+.mysecurity{
+	background: #eee;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.mysecurity header{
+	display: flex;
+	height: .87rem;
+	line-height: .87rem;
+	color: #333333;
+	background: #fff;
+	font-size:32px;
+	padding:0 .3rem ;
+}
+.mysecurity header i{
+	width:.40rem;
+	
+	
+}
+.fa-ellipsis-h:before {
+    content: "\f141";
+    display: block;
+    line-height: .87rem;
+}
+.mysecurity header i:nth-child(1){
+	font-family: "宋体";
+}
+
+.mysecurity header span{
+	flex: 1;
+	text-align: center;
+}
+
+.mysecurity section ul li{
+	height: .9rem;
+	background: #FFFFFF;
+	padding: 0 .3rem;
+	font-size:28px;
+	line-height:.9rem;
+	position: relative;
+}
+.mysecurity section ul li:nth-child(1){
+	height: 1.2rem;
+	line-height:1.2rem;
+}
+.mysecurity section ul li:nth-child(1),.mysecurity section ul li:nth-child(3){
+	margin-top:.2rem ;
+}
+.mysecurity section button{
+	display: block;
+	height:.64rem;
+	background: #FFFFFF;
+	width:4.2rem;
+	margin:.49rem auto .49rem ;
+	text-align: center;
+	line-height:.64rem;
+	font-size: 0.33rem;
+	border: 0;
+}
+.mysecurity section ul .have:after{
+	content:"";
+	position: absolute;
+	display: block;
+	height:2px;
+	width:6.88rem;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	background:#eee;
+}

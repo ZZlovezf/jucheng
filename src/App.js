@@ -13,8 +13,18 @@ import Login from "./common/js/login"
 import "./common/css/reset.css"
 import "./common/js/flexble"
 import "./common/css/home.css"
-
+import MySecurity from "./components/My/mysecurity" 
+import Register1 from "./common/js/register1"
+import Register2 from "./common/js/register2"
+import MyRoute from "./common/js/myRouter"
+import Ticket from "./common/js/ticket"
 class App extends Component {
+	constructor() {
+	    super()
+		
+		this.state=store.getState().home
+		store.subscribe(this.handleUpdate.bind(this))
+	}
   render() {
     return (
 		<Provider store={store}>
@@ -24,22 +34,39 @@ class App extends Component {
       	<div className="con">
 				<Switch>
 				<Route path="/search" component={Search}/>
-
-      		<Route path="/ele" component={Ele}/>
+					<Route path="/register1" component={Register1}/>
+					
+					<Route path="/ele" component={Ele}/>
+					<Route path="/mysecurity" component={MySecurity}/>
 					<Route path="/index" component={Home}/>
 					<Route path="/list" component={List}/>
-					<Route path="/my" component={My}/>
 					<Route path="/login" component={Login}/>
-					<Redirect path="/" to="/index"/>
+					{/* <Route path="/my" component={My}/> */
+					/*  */
+					/* <MyRoute flag={this.state.routerFlag} Login={Login} My={My} /> */
+}
+					
+					
+					
 					{/* list */}
 					<Route path="/list/detail" exact component={list_detail} />
 					<Route path="/selectcity" component={selectcity} />
+					<Route path="/ticket/:type" component={Ticket} />
+					<MyRoute path="/my" component={My} flag={this.state.routerFlag} elsePath="/login"/>
+					<MyRoute path="/register2" component={Register2} flag={this.state.routerFlag2} elsePath="/login"/>
+					<Redirect path="/" to="/index"/>
+					
+				
 					</Switch>
+					
       	</div>
         
       </Router>
 			</Provider>
     );
+  }
+  handleUpdate(){
+	  this.setState(store.getState().home)
   }
 }
 export default App;

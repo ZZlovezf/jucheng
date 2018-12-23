@@ -1,4 +1,5 @@
 import React,{Component,Fragment} from "react"
+import {Link} from "react-router-dom"
 export default class Hots extends Component{
 	constructor() {
 	    super()
@@ -17,7 +18,7 @@ export default class Hots extends Component{
 					<div className="list-wrap1" style={{display:"flex"}} ref="wrap1">
 						{
 							data.data.map((item,index)=>{
-									return  <a className="show-item1 clearfix " href={item.schedular_url} key={index}>
+									return  <Link className="show-item1 clearfix " to={"/ticket/"+item.schedular_url.slice(-5)} key={index}>
 							<div className="poster-box">
 								<img className="poster-pic" src={item.pic}
 									alt={item.show_name}/>																					
@@ -26,7 +27,7 @@ export default class Hots extends Component{
 								<p className="poster-name">{item.show_name}</p>										
 								<p className="poster-time">{item.display_show_time}<span class="poster-address">{item.city_name}</span></p>
 							</div>									
-						</a>
+						</Link>
 							})
 						}
 						

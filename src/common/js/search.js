@@ -9,4 +9,5 @@ export default class Search extends Component{
 			</div>
 		 )
 	}
+	
 }
