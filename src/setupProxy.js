@@ -8,5 +8,4 @@ module.exports =(app)=>{
 	app.use('/Show/getShowList', proxy({target:'https://m.juooo.com/', changeOrigin: true}));
 	app.use('/index/hotsShowList', proxy({target: 'https://m.juooo.com/',changeOrigin: true}));
 	app.use(proxy('/Show', {target: 'https://m.juooo.com',changeOrigin: true}));
-
 }

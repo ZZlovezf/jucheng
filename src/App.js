@@ -6,7 +6,7 @@ import My from "./components/My/my"
 import Ele from "./components/ele/ele"
 import store from "./store"
 import list_detail from "./components/list/child/list_detail"
-import selectcity from "./components/list/child/selectcity"
+import selectcity from "./components/list/city/selectcity"
 import {Provider} from "react-redux"
 import Search from "./common/js/search"
 import Login from "./common/js/login"
@@ -23,17 +23,17 @@ class App extends Component {
        
       	<div className="con">
 				<Switch>
-				<Route path="/search" component={Search}/>
-
+					<Route path="/search" component={Search}/>
       		<Route path="/ele" component={Ele}/>
 					<Route path="/index" component={Home}/>
 					<Route path="/list" component={List}/>
 					<Route path="/my" component={My}/>
 					<Route path="/login" component={Login}/>
-					<Redirect path="/" to="/index"/>
 					{/* list */}
+					
 					<Route path="/list/detail" exact component={list_detail} />
 					<Route path="/selectcity" component={selectcity} />
+					<Redirect path="/" to="/index"/>
 					</Switch>
       	</div>
         

@@ -1,37 +1,34 @@
-import React, { Component } from "react";
+import React, { Component,Fragment } from "react";
 import { Link } from "react-router-dom"
 import "../../../../node_modules/swiper/dist/css/swiper.min.css";
-import list from "../list";
-
+import List_loding from "../child/list_loder";
 class list_show extends Component {
     constructor(props) {
         super(props)
         this.state = {
             data: this.props.data,
             data1: {
-                list: [
-                    { c_name: "正在加载" }
-                ]
+                list: []
             }
         }
     }
     render() {
-        let { data, data1 } = this.props;
+        let { data,detail,flag} = this.props;
         let shuju = {}
         if (!data) {
             shuju = this.state.data1
-
         } else {
             shuju = data
         }
         // let shuju = data ? data.list : data1.list
         return (
+            <Fragment>
             <ul id="list_show" ref="list_nav" >
-
+            
                 {
-                    shuju.list.map((item, index) => {
+                    shuju.list.schedular_name?<List_loding/>:shuju.list.map((item, index) => {
                         return <li key={index}>
-                            <Link to="/listdetail">
+                            <Link to="/listdetail" onClick={detail.bind(this,index)}>
                                 <div id="img-box"><img src={" http://image.juooo.com" + item.pic} /></div>
                                 <div id="detail-box">
                                     <p>{item.schedular_name}</p>
@@ -40,14 +37,21 @@ class list_show extends Component {
                                     <p><span>¥</span>
                                         {item.min_price}
                                         <span>-</span>
-                                        {item.max_price}</p>
+                                        {item.max_price}</p>    
                                 </div>
                             </Link>
                         </li>
 
                     })
                 }
+               {shuju.list.schedular_name?<div>未找到相应内容</div>:""} 
+                
             </ul>
+            
+           {flag?<List_loding/>:""}
+           <div className="none"><span>没有更多了</span></div>
+            
+            </Fragment>
         )
     }
 }

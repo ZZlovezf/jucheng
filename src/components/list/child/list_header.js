@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
-import {NavLink,Link} from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 class list_Header extends Component {
-    constructor(){
-        super()
-        
-    }
-    static defaultProps = {
-        address :"全国"
-    }
-  render() {
-      let {address} = this.props
-		return (
-			<div className="list_header">
+    render() {
+        let { cid } = this.props
+        return (
+            <div className="list_header">
                 <Link to="/selectcity" className="city">
-                    <span>{address}</span>
+                    <span>{cid.name}</span>
                     <span>></span>
                 </Link>
-                <Link to="/https://m.juooo.com/search/index">
-                搜索演出、艺人或场馆
+                <Link to="/search" className="list_search">
+                    搜索演出、艺人或场馆
                 </Link>
+                <Link to=""></Link>
                 <a>查</a>
-			</div>
-		);
-  }
+            </div>
+        );
+    }
 }
 
 export default list_Header;

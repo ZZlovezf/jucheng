@@ -1,70 +1,151 @@
 
-import React, { Component } from 'react';
-import {HashRouter as Router,Route,Link,NavLink,Switch,Redirect} from "react-router-dom";
+import React, { Component, Fragment } from 'react';
+// import {HashRouter as Router,Route,Link,NavLink,Switch,Redirect} from "react-router-dom";
 import { connect } from "react-redux";
 
 import Footer from "../../common/js/footer";
 import List_header from "./child/list_header";
 import List_nav from "./child/list_nav1";
 import List_show from "./child/list_show";
-import List_detail from "./child/list_detail";
-import { GG_showdata } from "../../action/actionCreator";
 import "./style/list.css";
+import BScroll from "better-scroll";
+import {
+  GG_showdata,
+  GG_getNewDate
+}
+  from "../../action/actionCreator";
+import { off } from 'rsvp';
 const qs = require("querystring");
 
-
-
 class List extends Component {
-  componentDidMount() {
-    let { cid, caid } = this.state.url
-    this.props.getDate(cid, caid)
-  }
   constructor(props) {
     super(props)
     let url = this.changeprops()
     this.state = {
-      url
+      url,
+      obj: {
+        city_id: -1,
+        category: 0,
+        keywords: null,
+        activity_id: 0,
+        sort_type: 0,
+        page: 1
+      },
+      flag: false
     }
   }
   render() {
-   
-    let { data } = JSON.parse(this.props.listdata);
+    let { flag } = this.state;
+    let { listdata, city } = this.props;
     return (
-      <div id="list">
-      <Route path="/listdetail" component={List_detail}/>
-        <List_header/>
-        <List_nav Changeprops={this.handleGet.bind(this)} />
-        <List_show data={data} />
-        <Footer />
-      </div>
+      <Fragment>
+        {flag ? <div className="falseheader">
+          <List_header cid={city} />
+          <List_nav cid={city} Changeprop={this.handleGet.bind(this)} />
+        </div> : ""}
+        <div id="list" className="wrapper" ref="wrapper">
+          <div className="content">
+            {flag ? "" : <List_header cid={city} />}
+            {flag ? "" : <List_nav cid={city} Changeprop={this.handleGet.bind(this)} />}
+            <List_show data={listdata.data} flag={flag} detail={this.handledetail} />
+          </div>
+          <Footer />
+        </div>
+      </Fragment>
     );
+  }
+  componentDidMount() {
+    this.DidMountDate()
+    this.scorll = new BScroll(this.refs.wrapper, {
+      click: true,
+      pullUpLoad: true,
+      probeType: 2
+    })
+    this.scorll.on("pullingUp", () => {
+      let obj1 = JSON.parse(JSON.stringify(this.state.obj));
+      this.setState({
+        obj: {
+          city_id: -1,
+          category: 0,
+          keywords: null,
+          activity_id: 0,
+          sort_type: 0,
+          page: ++this.state.obj.page
+        }
+      })
+      obj1.page++;
+      this.props.getnewDate(obj1)
+    })
+    this.scorll.on("scroll", (offset) => {
+      if (offset.y <= -162.97) {
+        this.setState({
+          flag: true
+        })
+      } else {
+        this.setState({
+          flag: false
+        })
+      }
+    })
+  }
+  componentDidUpdate() {
+    this.scorll.refresh();
+    this.scorll.finishPullUp();
+  }
+  handledetail() {
+    this.DidMountDate()
+  }
+  // 导航点击获取数据
+  handleGet() {
+    this.DidMountDate()
+  }
+  // 初始化数据
+  DidMountDate() {
+    let url = this.changeprops();
+    if (url.caid) {
+      let { cid, caid } = url
+      let obj = {
+        city_id: cid,
+        category: caid,
+        keywords: null,
+        activity_id: 0,
+        sort_type: 0,
+        page: 1
+      }
+      this.props.getDate(obj)
+    } else if (url.k) {
+      let { cid, caid=0, k } = url
+      let obj = {
+        city_id: cid,
+        category: caid,
+        keywords: k,
+        activity_id: 0,
+        sort_type: 0,
+        page: 1
+      }
+      this.props.getDate(obj)
+    }
   }
   changeprops() {
     let query = qs.parse(this.props.location.search.slice(1))
     return query
   }
-  handleGet() {  
-    let url = this.changeprops()   
-    let { cid, caid } = url;
-    this.props.getDate(cid, caid)
-  }
+  // 导航获取数据
 
 }
 const mapStateToProps = (state) => ({
-  listdata: JSON.stringify(state.list.showdata)
+  listdata: state.list.showdata,
+  cid: state.list.gg_city,
+  caid: state.list.gg_getdatatype,
+  city: state.list.gg_city
 })
 const mapDispatchToProps = (dispatch) => ({
-
-  getDate(cid, caid = 0, page = 1) {
-    let obj = {
-      city_id: cid,
-      category: caid,
-      keywords: null,
-      activity_id: 0,
-      sort_type: 0,
-      page: page
-    }
+  getDate(obj) {
+   
     GG_showdata(dispatch, obj)
+  },
+  getnewDate(obj) {
+    GG_getNewDate(dispatch, obj)
   }
 })
 
