@@ -1,0 +1,168 @@
+.ticket header{
+	display: flex;
+	height: .87rem;
+	line-height: .87rem;
+	color: #333333;
+	
+	font-size:32px;
+	padding:0 .3rem ;
+	justify-content: space-between;
+	position: fixed;top: 0;
+	left: 0;
+	z-index: 10;width: 100%;
+}
+.ticket header i{
+	width:.40rem;	
+}
+.ticket section{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom:1rem;
+	right: 0;
+	overflow: auto;
+}
+.fa-ellipsis-h:before {
+    content: "\f141";
+    display: block;
+    line-height: .87rem;
+}
+.ticket header i:nth-child(1){
+	font-family: "宋体";
+}
+.ticket footer{
+	position: fixed;
+	height: 1rem;
+	background: #FFFFFF;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+.ticket footer ul{
+	height:100%;
+	width:100%;
+	display: flex;
+	text-align:center;
+	line-height: 1rem;
+}
+.ticket footer ul li:nth-child(1){
+	width: 1.3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-size:30px;
+	line-height:77px;
+}
+.ticket footer ul li:nth-child(1) i{
+	position: relative;
+}
+.ticket footer .fa-headphones:before {
+    content: "\f025";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 10px;
+}
+.ticket footer ul li:nth-child(2){
+	width: 3.1rem;
+	font-size:32px;
+}
+.ticket footer ul li:nth-child(3){
+	flex: 1;
+	color: #fff;
+    background: #ff7919;
+	font-size:32px;
+}
+.ticket section .bg{
+	height: 5.17rem;
+	position: relative;
+	overflow: hidden;
+}
+.ticket .poster-fg{
+	overflow: hidden;
+    position: absolute;
+    bottom: -1.14rem;
+    left: -25%;
+    z-index: 5;
+    border-top: 1px solid #ccc;
+    
+    border-radius: 50%;
+    width: 150%;
+    height: 2.56rem;
+    background: #fff;
+}
+.ticket section .title{
+	font-size: 0.36rem;
+    padding-top: 3px;
+    margin-bottom: 0.25333rem;
+    word-break: break-word;
+    color: #212121;
+    overflow: hidden;
+}
+.ticket section article{
+	padding:0 .3rem;
+	}
+.ticket section article p{
+    font-size: 0.3rem;
+    color: #666;
+	height: .46rem;
+	padding-bottom:.1rem;}
+	.ticket section article .title{
+		margin-bottom:.25rem;
+	}
+.ticket section article .price{
+	padding: 0.1rem 0 0.32rem;
+    font-size: 0.33rem;
+    color: #ff7919;
+}
+.ticket-notice {
+    margin: 0.23rem 0;
+    padding: 0 0.32rem;
+    background: #fff;
+}
+.ticket-notice .title {
+    padding-top: 0.46rem;
+    font-size: 0.34rem;
+    font-weight: normal;
+    text-align: center;
+    color: #212121;
+}
+.ticket-notice .ticket-txt {
+    padding-top: 0.2rem;
+    font-size: 0.3rem;
+    overflow: hidden;
+}
+.ticket-notice .in-to-know {
+    margin-top: 0.16rem;
+    border-top: 1px dashed #ccc;
+    padding: 0.25rem 0 0.36rem;
+    font-size: 0.25rem;
+    line-height: 0.36rem;
+    color: #999;
+}
+.ticket .img-bg img{
+    padding: 0.03rem;
+    width: 2.68rem;
+    height: 3.60rem;
+    border: 3px solid #fff;
+	position: relative;
+	z-index: 100;
+}
+.ticket .img-bg{
+	text-align: center;
+	margin:.76rem 0 .2rem 0 ;
+	position: relative;
+}
+.ticket .img-bg:after {
+   
+    position: absolute;
+    top: 3.22rem;
+    
+    left: 1.59rem;
+    width: 4.35333rem;
+    height: 0.4rem;
+    background: url(https://m.juooo.com/public/basic/Home/app/app-juooo4.2/images/shadow.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    content: "";
+	z-index: 1000;
+}
