@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import Footer from "../../common/js/footer"
 import {connect} from "react-redux"
-import {get_one_action,drawing_action} from "../../action/actionCreator"
+import {get_one_action,drawing_action,getImg_action} from "../../action/actionCreator"
 import Header from "../../common/js/header"
 import MySwiper from "../../common/js/swiper"
 import CateGroy from "./children/categroy"
 import Hots from "./children/hots"
 class Home extends Component {
   render() {
-		let {data}=this.props
-		let swiperList=this.props.data.data.filter((item,index)=>index<5)
+		let {data,imgData}=this.props
+		let swiperList=this.props.imgData.data.filter((item,index)=>index<5)
     return (
       <div>
 				<Header/>
@@ -23,6 +23,7 @@ class Home extends Component {
   }
 	componentDidMount(){
 		this.props.getData()
+		this.props.getImg()
 		if(JSON.parse(sessionStorage.getItem("user"))){
 			this.props.drawing(true)
 		}else{
@@ -31,7 +32,8 @@ class Home extends Component {
 	}
 }
 const mapStateToProps=state=>({
-		data:state.home.oneData
+		data:state.home.oneData,
+		imgData:state.home.imgData
 })
 const mapDispatchToProps=(dispatch,props)=>({
 		getData(){
@@ -39,6 +41,9 @@ const mapDispatchToProps=(dispatch,props)=>({
 		},
 		drawing(flag){
 			dispatch(drawing_action(flag))
+		},
+		getImg(){
+			getImg_action(dispatch)
 		}
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Home);

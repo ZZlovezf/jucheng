@@ -3,6 +3,9 @@ const defaultState={
 		code:1,
 		data:[],	
 	},
+	imgData:{
+		code:1,data:[]
+	},
 	routerFlag:false,
 	loginUser:'',
 	loginUpwd:'',
@@ -11,6 +14,7 @@ const defaultState={
 }
 export default (state=defaultState,action)=>{
 	let newState=JSON.parse(JSON.stringify(state))
+	console.log(action.type)
 	switch(action.type){
 		case "ONE_DATA_FULFILLED":newState.oneData=action.payload;return newState;
 		case "LOGIN_CHANGE" :
@@ -49,7 +53,8 @@ export default (state=defaultState,action)=>{
 		}
 		case "CHANGE_REGISTERSTATE" :newState.routerFlag2=action.value;return newState;
 		case "DRAWING_ACTION" :newState.routerFlag=action.flag;return newState
-			
+		case "IMG_DATA_FULFILLED":
+			newState.imgData=action.payload;return newState
 	}
 	return state
 }

@@ -11,6 +11,29 @@ export const get_one_action = (dispatch) => {
 		})
 	})
 }
+export const getImg_action = (dispatch) => {
+	let obj={
+			confType: "L",
+	isSymbol: 1,
+	limit: 6
+	}
+	dispatch({
+		type: "IMG_DATA",
+		payload: new Promise(resolve => {
+			fetch("/index/getNationalSildeList",{
+				method:"post",
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+				},
+				body:qs.stringify(obj)
+			}).then(res => {
+				return res.json()
+			}).then(json => {
+				resolve(json)
+			})
+		})
+	})
+}
 
 export const GG_getcity = (dispatch, arr) => {
 	dispatch({
