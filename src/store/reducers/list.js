@@ -5,6 +5,7 @@ const defaultState = {
 }
 export default (state = defaultState, action) => {
     switch (action.type) {
+        
         case "GG_Data_FULFILLED":
             let GG_newdata = JSON.parse(JSON.stringify(state));
             GG_newdata.showdata = action.payload;
@@ -21,7 +22,13 @@ export default (state = defaultState, action) => {
         case "GG_GETDATATYPE":
             let GG_newCaid = JSON.parse(JSON.stringify(state));
             GG_newCaid.gg_getdatatype = action.val;
-            return GG_newCaid
+            return GG_newCaid;
+        case "GG_GETSORTDATA":  
+
+            let GG_sortdata = JSON.parse(JSON.stringify(state));
+            GG_sortdata.showdata.data.list = action.value;
+            console.log(action.value)
+            return GG_sortdata;
     }
     return state
 }

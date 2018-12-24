@@ -6,14 +6,15 @@ class list_show extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: this.props.data,
             data1: {
-                list: []
+                list: [],
+                noflage:false
             }
         }
     }
     render() {
         let { data,detail,flag} = this.props;
+        let {noflage} = this.state;
         let shuju = {}
         if (!data) {
             shuju = this.state.data1
@@ -24,7 +25,6 @@ class list_show extends Component {
         return (
             <Fragment>
             <ul id="list_show" ref="list_nav" >
-            
                 {
                     shuju.list.schedular_name?<List_loding/>:shuju.list.map((item, index) => {
                         return <li key={index}>
@@ -49,11 +49,26 @@ class list_show extends Component {
             </ul>
             
            {flag?<List_loding/>:""}
-           <div className="none"><span>没有更多了</span></div>
+           
+           {noflage?<div className="none"><span>没有更多了</span></div>:""}
             
             </Fragment>
         )
     }
+    componentDidMount(){
+        if(this.props.data){
+            if(this.props.data.total<4){
+                this.setState({
+                    noflage:true
+                })
+            }else{
+                this.setState({
+                    noflage:false
+                })
+            }
+        }
+    }
 }
+
 
 export default list_show

@@ -23,8 +23,8 @@ class Search extends Component {
 		let { hotlist } = this.state;
 		return (
 			<div className="search">
-				<div className="search-header">
-					<i>&lt;</i>
+				<div className="search-header" >
+					<i onClick={this.handleback.bind(this)}>&lt;</i>
 					<p>
 						<b className="fa fa-search"></b>
 						<input type="text" ref="input" placeholder="演出/艺人/场馆" />
@@ -42,14 +42,17 @@ class Search extends Component {
 			</div>
 		)
 	}
+	handleback() {
+		this.props.history.goBack()
+	}
 	handlepush() {
-		let cid = store.getState().list.gg_city.cid;
-		let k = this.refs.input.value
-		 let url = `/list?cid=${cid}&k=${k}`
-		 this.props.history.push(url)
+			let cid = store.getState().list.gg_city.cid;
+			let k = this.refs.input.value
+			let url = `/list?cid=${cid}&k=${k}`
+			this.props.history.push(url)
 	}
 }
 
 export default Search
-	
+
 

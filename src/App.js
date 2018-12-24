@@ -44,15 +44,12 @@ class App extends Component {
 							<Route path="/list" component={List} />
 							<Route path="/login" component={Login} />
 							{/* list */}
-
 							<Route path="/list/detail" exact component={list_detail} />
 							<Route path="/selectcity" component={selectcity} />
 							<Route path="/ticket/:type" component={Ticket} />
 							<MyRoute path="/my" component={My} flag={this.state.routerFlag} elsePath="/login" />
 							<MyRoute path="/register2" component={Register2} flag={this.state.routerFlag2} elsePath="/login" />
 							<Redirect path="/" to="/index" />
-
-
 						</Switch>
 
 					</div>

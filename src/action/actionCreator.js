@@ -120,3 +120,12 @@ export const drawing_action=(flag)=>({
 	type:"DRAWING_ACTION",
 	flag:flag
 })
+export const GG_getSOrtData=(dispatch,arr)=>{
+	dispatch({
+		type:"GG_GETSORTDATA",
+		value:arr
+	})
+}
+
+
+
