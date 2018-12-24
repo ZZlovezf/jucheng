@@ -21,25 +21,23 @@ class MySwiper extends Component {
 			</div>
 		);
   }
-  componentDidMount(){
-		setTimeout(()=>{
-			this.swiper=new Swiper ('.swiper-container', {
-						direction: 'horizontal', 
-						loop: true,
-						pagination: {
-						el: '.swiper-pagination',
-						},
-						autoplay: {
-							delay: 3000,
-							disableOnInteraction:false,
-							}
-				})
-		},300)
+	componentDidUpdate(){
+		if(this.props.swiperList.length==5){
+			
+				this.swiper=new Swiper ('.swiper-container', {
+							direction: 'horizontal', 
+							loop: true,
+							pagination: {
+							el: '.swiper-pagination',
+							},
+							autoplay: {
+								delay: 3000,
+								disableOnInteraction:false,
+								}
+					})
+			
+		}
 	}
-
-	
-  
-	
 }
 
 export default MySwiper;
